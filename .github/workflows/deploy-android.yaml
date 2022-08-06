@@ -23,7 +23,7 @@ jobs:
           encodedString: ${{ secrets.KEYSTORE }}
 
       - name: Build
-        run: flutter build apk --build-number=$GITHUB_RUN_NUMBER
+        run: flutter build apk --build-number=$GITHUB_RUN_NUMBER --dart-define=CINNI_PAPER_API_KEY=${{ secrets.CINNI_PAPER_API_KEY }}
         env:
           ANDROID_KEYSTORE_PATH: ${{ steps.write_file.outputs.filePath }}
           ANDROID_KEYSTORE_ALIAS: ${{ secrets.ANDROID_KEYSTORE_ALIAS }}
