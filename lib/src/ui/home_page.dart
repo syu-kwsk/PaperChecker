@@ -17,13 +17,12 @@ class HomePage extends ConsumerWidget {
         centerTitle: true,
         title: Text(title, style: const TextStyle(color: AppColors.fontMain),),
       ),
-      // body: Column(
-      //   children: const [
-      //     Padding(padding: EdgeInsets.all(8.0), child: SearchField(),),
-      //
-      //   ],
-      // ),
-      body: const PaperListView(),
+      body: Column(
+        children: const [
+          Padding(padding: EdgeInsets.all(8.0), child: SearchField(),),
+          Flexible(child: PaperListView(),),
+        ],
+      ),
     );
   }
 }
@@ -91,11 +90,11 @@ class PaperCard extends StatelessWidget {
         children: [
           Text(paper.title, style: const TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),),
           const SizedBox(height: 8.0,),
-          Text("link: ${paper.date}"),
+          Text("date: ${paper.date}"),
           const SizedBox(height: 8.0,),
           Text("publisher: ${paper.doi}"),
           const SizedBox(height: 8.0,),
-          Text("date: ${paper.link}"),
+          Text("link: ${paper.link}"),
         ],
       ),
     );
