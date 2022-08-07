@@ -6,9 +6,9 @@ class Paper {
   final String doi;
 
   Paper.fromJson(Map<String, dynamic> json) :
-        title = json["title"]!,
-        abstract = json["description"]!,
-        link = json["@id"]!,
-        date = json["prism:publicationDate"]!,
-        doi = json["dc:publisher"]!;
+        title = json["title"],
+        abstract = json["description"],
+        link = json["@id"],
+        date = json["prism:publicationDate"],
+        doi = json["dc:publisher"];
 }
